@@ -73,9 +73,11 @@ Exercise1.5
         return 0;
     }
 Exercise1.6
-I guss it is legal.
-The CMD will show:
-*The sum of V1 and V2 is V1+V2*
+~~I guss it is legal.
+The CMD will show: 
+*The sum of V1 and V2 is V1+V2*~~
+Yesterday I put a wrong answer,the right answer is:
+It is not legal.Because the 2,3 has the operator ";" that means the sentence is end up.We need to add "std::cout" before the operator "<<" .
 
 
 **The While Statement**
@@ -115,19 +117,59 @@ Exercise1.9
                   << sum << std::endl;
         return 0;
     }
+   
+Here is the another example
+
+        #include <iostreame>
+    int main()
+    {
+        int sum = 0, val = 50;
+        while(val <= 100){
+        sum += val;
+        ++val;
+        }
+        std::cout << "The sum of 50 to 100 is"
+                  << sum << std::endl;
+        return 0;
+    }
+
 Exercise1.10
 
     #include <iostream>
     int main()
     {
-       
+       int val = 10;
+       while (val >= 0){
+       std::cout << val << std::endl;
+       --val;
+       }
+       return 0;
     }
 Exercise1.11
+I think this example is very good~
 
     #include <iostream>
     int main()
     {
-       
+     	int v1 = 0, v2 = 0;
+	    std::cout << "Please Enter two numbers:" << std::endl;
+	    std::cin >> v1 >> v2;
+	    if (v1 > v2) 
+		while (v1 >= v2)
+		{
+			std::cout << v1 << std::endl;//from big to small
+			v1--;
+		}
+	
+	    else                            
+        while (v1 <= v2)           //from small to big
+		{
+			std::cout << v1 << std::endl;
+			v1++;
+		}
+	
+	   system("pause");
+       return 0;
     }
 **The For Statement**
 Here is the example:
@@ -144,4 +186,79 @@ Here is the example:
                  << sum << std::endl;
        return 0;
     }
+    
+###Home work (1.13-1.14)
+Exercise1.13
 
+    1.9
+    #include <iostream>
+    int main()
+    {
+	    int sum = 0;
+	    for (int val = 50; val <= 100; ++val)
+	    sum += val;
+		std::cout << sum << std::endl;
+        return 0;
+    }
+    -----------------------------------
+    1.10
+    #include <iostream>
+    int main()
+    {
+        for(int val = 10; val >= 0; --val)
+        std::cout << val << std::endl;
+        return 0;
+    }
+    -----------------------------------
+     1.11
+    #include <iostream>
+    int main()
+    {
+       std::cout << "Please enter two numbers:" << std::endl;
+       std::cin >> v1 >> v2;
+       if(v1 > v2)      //from big to small
+          for(v1 >= v2; --v1)
+          std::cout << V1 << std::endl;
+       esle
+          for(v1 < v2; ++v1) //from small to big
+          std::cout << v1 <<std::endl;
+       return 0;
+    }
+
+Exercise1.14
+You will find if the loop is limited , the FOR statement is more simple,else the WHILE statement is more good.
+
+**Reading an Unknown Number of Inputs**
+
+    #include <iostream>
+    int main()
+    {
+        int sum = 0,value = 0;
+        while( std::cin >> value)
+        sum += value;
+        std::cout << "Sum is " << std::endl;
+        return 0;
+    }
+**IF Statement**
+
+    #include <iostream>
+    int main()
+    {
+        int currVal = 0, val = 0;
+        if(std::cin >> currVal){ //read a value into currVal
+           int cnt = 1;
+           while (std::cin >> val){
+                if(val == currVall)
+                   ++cnt;
+                else{
+                std::cout << currVal << " occurs "
+                          << cnt << "times" << std::endl;
+                  currlVal = val; //remember the new value
+                  cnt = 1; //reset the counter
+                }
+           }
+           std::cout << currVal << " occurs "
+                     << cnt << std::end;
+        }
+        return 0;
+    }
